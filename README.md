@@ -60,17 +60,24 @@ Flow:
 ---
 
 ### ✔ Use Case 2 — Conflict Detected & Alternative Returned (Rescheduling )
-**Goal:** Requested time is unavailable → system proposes an alternative.
+**Goal:** The initially proposed time is not accepted by the user → the system provides an alternative meeting slot.
 
 Flow:
-1. UserAgent sends MeetingRequest  
-2. CalendarAgent reports conflict (FreeBusyReply with unavailable slot)  
-3. The user rejects the proposal  
-4. NegotiatorAgent sends second FreeBusyQuery  
-5. CalendarAgent provides new slot
-6. UserAgent accepts the new proposal
-7. Calendar commits
-8. NotifierAgent sends updated confirmation
+
+1.	UserAgent sends an initial MeetingRequest
+2.	NegotiatorAgent requests availability by sending a FreeBusyQuery to the CalendarAgent
+3.	CalendarAgent returns a first available slot
+4.	NegotiatorAgent sends the first Proposal to the user
+5.	UserAgent rejects the first proposal (e.g., conflict from user side)
+6.	NegotiatorAgent requests a second slot by sending another FreeBusyQuery
+7.	CalendarAgent returns an alternative available time
+8.	NegotiatorAgent sends the second Proposal to the user
+9.	UserAgent accepts the new proposal
+10.	NegotiatorAgent sends Commit to CalendarAgent
+11.	CalendarAgent confirms the booking with CommitAck
+12.	NotifierAgent sends the final updated confirmation to the UserAgent
+
+
 
 📸 **Sniffer Output (UC2)**
 ![UC2](pics/UC2.png)
