@@ -45,26 +45,32 @@ Then press Start.
 **Goal:** User requests a meeting → system checks availability → confirms the meeting.
 
 Flow:
-1. UserAgent sends a meeting request  
-2. Negotiator checks availability via CalendarAgent  
-3. CalendarAgent confirms the time slot  
-4. Negotiator approves  
-5. NotifierAgent sends confirmation to the user  
+1. UserAgent sends MeetingRequest
+2. NegotiatorAgent sends FreeBusyQuery to CalendarAgent  
+3. CalendarAgent returns FreeBusyReply  
+4. NegotiatorAgent sends final Proposal to UserAgent  
+5. UserAgent accepts
+6. Negotiator sends Commit to CalendarAgent
+7. CalendarAgent returns CommitAck
+8. NotifierAgent sends final confirmation
 
 📸 **Sniffer Output (UC1)**
 ![UC1](pics/UC1.png)
 
 ---
 
-### ✔ Use Case 2 — Conflict Detected & Alternative Returned (Rescheduling an Existing Meeting)
+### ✔ Use Case 2 — Conflict Detected & Alternative Returned (Rescheduling )
 **Goal:** Requested time is unavailable → system proposes an alternative.
 
 Flow:
-1. UserAgent requests a time slot  
-2. CalendarAgent reports conflict  
-3. Negotiator suggests an alternative  
-4. CalendarAgent confirms  
-5. NotifierAgent sends updated schedule  
+1. UserAgent sends MeetingRequest  
+2. CalendarAgent reports conflict (FreeBusyReply with unavailable slot)  
+3. The user rejects the proposal  
+4. NegotiatorAgent sends second FreeBusyQuery  
+5. CalendarAgent provides new slot
+6. UserAgent accepts the new proposal
+7. Calendar commits
+8. NotifierAgent sends updated confirmation
 
 📸 **Sniffer Output (UC2)**
 ![UC2](pics/UC2.png)
@@ -72,13 +78,15 @@ Flow:
 ---
 
 ### ✔ Use Case 3 — Cancelling a Meeting
-**Goal:** Multiple conflicts → system keeps negotiating until a free time is found.
+**Goal:** User decides to cancel an already scheduled meeting → system frees the reserved slot and sends cancellation notices.
 
 Flow:
-1. Initial Request → Conflict  
-2. Alternative 1 → Conflict  
-3. Alternative 2 → Accepted  
-4. NotifierAgent informs user  
+1. UserAgent sends CancelRequest  
+2. NegotiatorAgent forwards CancelCommit to CalendarAgent  
+3. CalendarAgent releases the time slot and returns CancelAck
+4. NegotiatorAgent forwards NotifyCancellation to NotifierAgent
+5. NotifierAgent sends SendCancelNotice to UserAgent
+6. UserAgent confirms CancellationOK  
 
 📸 **Sniffer Output (UC3)**
 ![UC3](pics/UC3.png)
@@ -119,34 +127,15 @@ Each use case automatically generates its own log file (e.g., `UC1.log`).
 ```sh
 javac -cp "libs/*;src/main/java" -d build/classes/java/main   src/main/java/app/messages/*.java   src/main/java/app/util/*.java   src/main/java/app/agents/*.java   src/main/java/app/boot/*.java
 ```
-
+```
+Or
+gradle build
+```
 ---
 
 ## ▶ How to Run (Start JADE Platform)
 
 Start all agents **except UserAgent**:
-
-```sh
-javac -cp "libs\jade-4.5.0.jar;libs\gson-2.10.1.jar;libs\json-20210307.jar;src\main\java" `
-  -d build\classes\java\main `
-  src\main\java\app\messages\*.java `
-  src\main\java\app\util\*.java `
-  src\main\java\app\agents\*.java `
-  src\main\java\app\boot\AutoBoot.java
-
-```
-
-This launches:
-
-- CalendarAgent
-- NegotiatorAgent
-- NotifierAgent
-- PrettySnifferAgent
-- RMA Tools
-
----
-
-## ▶ How to Run Each Use Case
 
 ### Use Case 1
 ```sh
@@ -162,6 +151,16 @@ java "-Ddemo.uc=UC2" -cp ".;libs/*;build/classes/java/main" app.boot.AutoBoot
 ```sh
 java "-Ddemo.uc=UC3" -cp ".;libs/*;build/classes/java/main" app.boot.AutoBoot
 ```
+
+
+This launches:
+
+- CalendarAgent
+- NegotiatorAgent
+- NotifierAgent
+- PrettySnifferAgent
+- RMA Tools
+
 
 ---
 
