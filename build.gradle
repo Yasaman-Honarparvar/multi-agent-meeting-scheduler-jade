@@ -1,0 +1,30 @@
+plugins {
+    id 'application'
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+    // از ریپوهای خارجی JADE صرف‌نظر می‌کنیم تا SSL/دسترس‌پذیری اذیت نکند
+    flatDir { dirs 'libs' } // این خط مهم است
+}
+
+dependencies {
+    implementation 'com.google.code.gson:gson:2.10.1'
+
+    implementation files('libs/jade-4.5.0.jar') // ← نام فایل را مطابق چیزی که گذاشتی بنویس
+    implementation 'org.json:json:20240303'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+application {
+    mainClass = 'app.boot.MainBoot'
+    }
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
