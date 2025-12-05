@@ -1,0 +1,21 @@
+[PrettySniffer] Started as PrettySniffer
+[User?Negotiator] cid=UC1_MEETING_REQUEST content=Thesis Discussion | 2025-09-25T10:00-06:00/45m
+[User?Negotiator] cid=UC1_MEETING_REQUEST content=Thesis Discussion | 2025-09-25T10:00-06:00/45m
+[Negotiator?Calendar] cid=UC1_FREEBUSY_QUERY content=Thesis Discussion | 2025-09-25T10:00-06:00/45m
+[Negotiator?Calendar] cid=UC1_FREEBUSY_QUERY content=Thesis Discussion | 2025-09-25T10:00-06:00/45m
+[Calendar?Negotiator] cid=UC1_FREEBUSY_REPLY content=2025-09-25T10:00-06:00 -> 2025-09-25T10:45-06:00
+[Calendar?Negotiator] cid=UC1_FREEBUSY_REPLY content=2025-09-25T10:00-06:00 -> 2025-09-25T10:45-06:00
+[Negotiator?User] cid=UC1_PROPOSAL content=2025-09-25T10:00-06:00 -> 2025-09-25T10:45-06:00
+[Negotiator?User] cid=UC1_PROPOSAL content=2025-09-25T10:00-06:00 -> 2025-09-25T10:45-06:00
+[User?Negotiator] cid=UC1_DECISION content=ACCEPT
+[User?Negotiator] cid=UC1_DECISION content=ACCEPT
+[Negotiator?Calendar] cid=UC1_COMMIT content=ACCEPT
+[Negotiator?Calendar] cid=UC1_COMMIT content=ACCEPT
+[Calendar?Negotiator] cid=UC1_COMMIT_ACK content=meetingId=mtg-UC1-1764925854304
+[Calendar?Negotiator] cid=UC1_COMMIT_ACK content=meetingId=mtg-UC1-1764925854304
+[Negotiator?Notifier] cid=UC1_NOTIFY content=meetingId=mtg-UC1-1764925854304
+[Negotiator?Notifier] cid=UC1_NOTIFY content=meetingId=mtg-UC1-1764925854304
+[Notifier?User] cid=UC1_NOTIFICATION content=meetingId=mtg-UC1-1764925854304
+[Notifier?User] cid=UC1_NOTIFICATION content=meetingId=mtg-UC1-1764925854304
+[User?Negotiator] cid=UC1_CONFIRM content=OK (end of UC1)
+[User?Negotiator] cid=UC1_CONFIRM content=OK (UC1 finished)

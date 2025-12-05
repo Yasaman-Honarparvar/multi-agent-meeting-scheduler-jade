@@ -1,0 +1,13 @@
+[PrettySniffer] Started as PrettySniffer
+[User?Negotiator] cid=UC3_CANCEL_REQUEST content=Cancel mtg-1764926512965
+[User?Negotiator] cid=UC3_CANCEL_REQUEST meetingId=mtg-1764926512965
+[Negotiator?Calendar] cid=UC3_CANCEL_COMMIT meetingId=mtg-1764926512965
+[Negotiator?Calendar] cid=UC3_CANCEL_COMMIT meetingId=mtg-1764926512965
+[Calendar?Negotiator] cid=UC3_CANCEL_ACK meetingId=mtg-1764926512965
+[Calendar?Negotiator] cid=UC3_CANCEL_ACK meetingId=mtg-1764926512965
+[Negotiator?Notifier] cid=UC3_NOTIFY_CANCELLATION meetingId=mtg-1764926512965
+[Negotiator?Notifier] cid=UC3_NOTIFY_CANCELLATION meetingId=mtg-1764926512965
+[Notifier?User] cid=UC3_SEND_CANCEL_NOTICE content=Cancelled meetingId=mtg-1764926512965
+[Notifier?User] cid=UC3_SEND_CANCEL_NOTICE content=Cancelled meetingId=mtg-1764926512965
+[User?Negotiator] cid=UC3_CANCELLATION_OK content=OK (end of UC3)
+[User?Negotiator] cid=UC3_CANCELLATION_OK content=OK (UC3 finished)

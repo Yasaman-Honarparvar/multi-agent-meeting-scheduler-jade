@@ -1,0 +1,12 @@
+[Calendar] Init for scenario UC1
+[Negotiator] Init for scenario UC1
+[Notifier] Init for scenario UC1
+[User] Init as User | scenario=UC1
+[Calendar] Init for scenario UC2
+[Negotiator] Init for scenario UC2
+[Notifier] Init for scenario UC2
+[User] Init as User | scenario=UC2
+[Calendar] Init for scenario UC3
+[Negotiator] Init for scenario UC3
+[Notifier] Init for scenario UC3
+[User] Init as User | scenario=UC3

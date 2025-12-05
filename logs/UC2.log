@@ -1,0 +1,29 @@
+[PrettySniffer] Started as PrettySniffer
+[User?Negotiator] cid=UC2_MEETING_REQUEST content=Thesis Discussion | initial window
+[User?Negotiator] cid=UC2_MEETING_REQUEST content=Thesis Discussion | initial window
+[Negotiator?Calendar] cid=UC2_FREEBUSY_QUERY_1 content=Window#1
+[Negotiator?Calendar] cid=UC2_FREEBUSY_QUERY_1 content=Window#1
+[Calendar?Negotiator] cid=UC2_FREEBUSY_REPLY_1 content=2025-09-25T10:00-06:00 -> 2025-09-25T10:45-06:00
+[Calendar?Negotiator] cid=UC2_FREEBUSY_REPLY_1 content=2025-09-25T10:00-06:00 -> 2025-09-25T10:45-06:00
+[Negotiator?User] cid=UC2_PROPOSAL_1 content=2025-09-25T10:00-06:00 -> 2025-09-25T10:45-06:00
+[Negotiator?User] cid=UC2_PROPOSAL_1 content=2025-09-25T10:00-06:00 -> 2025-09-25T10:45-06:00
+[User?Negotiator] cid=UC2_DECISION_REJECT content=REJECT
+[User?Negotiator] cid=UC2_DECISION_REJECT content=REJECT
+[Negotiator?Calendar] cid=UC2_FREEBUSY_QUERY_2 content=Window#2 (+1 day)
+[Negotiator?Calendar] cid=UC2_FREEBUSY_QUERY_2 content=Window#2 (+1 day)
+[Calendar?Negotiator] cid=UC2_FREEBUSY_REPLY_2 content=2025-09-26T11:00-06:00 -> 2025-09-26T11:45-06:00
+[Calendar?Negotiator] cid=UC2_FREEBUSY_REPLY_2 content=2025-09-26T11:00-06:00 -> 2025-09-26T11:45-06:00
+[Negotiator?User] cid=UC2_PROPOSAL_2 content=2025-09-26T11:00-06:00 -> 2025-09-26T11:45-06:00
+[Negotiator?User] cid=UC2_PROPOSAL_2 content=2025-09-26T11:00-06:00 -> 2025-09-26T11:45-06:00
+[User?Negotiator] cid=UC2_DECISION_ACCEPT content=ACCEPT
+[User?Negotiator] cid=UC2_DECISION_ACCEPT content=ACCEPT
+[Negotiator?Calendar] cid=UC2_COMMIT content=Confirm reservation
+[Negotiator?Calendar] cid=UC2_COMMIT content=Confirm reservation
+[Calendar?Negotiator] cid=UC2_COMMIT_ACK content=meetingId=mtg-UC2-1764926276812
+[Calendar?Negotiator] cid=UC2_COMMIT_ACK content=meetingId=mtg-UC2-1764926276812
+[Negotiator?Notifier] cid=UC2_NOTIFY content=meetingId=mtg-UC2-1764926276812
+[Negotiator?Notifier] cid=UC2_NOTIFY content=meetingId=mtg-UC2-1764926276812
+[Notifier?User] cid=UC2_NOTIFICATION content=meetingId=mtg-UC2-1764926276812
+[Notifier?User] cid=UC2_NOTIFICATION content=meetingId=mtg-UC2-1764926276812
+[User?Negotiator] cid=UC2_CONFIRM content=OK (end of UC2)
+[User?Negotiator] cid=UC2_CONFIRM content=OK (UC2 finished)
